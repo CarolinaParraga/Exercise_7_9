@@ -1,5 +1,3 @@
-using System;
-
 //digit counter of a number entered by the user
 using System;
 
@@ -13,24 +11,27 @@ class digits
 	string dato = " ";
 	
 		
-	Console.Write("Insert a number: ");
+	Console.WriteLine("Insert a number: (to finish type end)");
 	dato = Console.ReadLine();
-		number = Convert.ToInt32(dato);
-        
-        //repeat proces until number 0
-	while (number != 0)
+	number = Convert.ToInt32(dato);
+		
+	//repeat proces until enter "end" or note insn't 0
+	while (dato != "end" && number != 0)
 	{
-	    if(number/10 == 0)
-	    Console.WriteLine("The number has one digit");
-	        else if (number/100 == 0)
-		Console.WriteLine("The number has two digit");
-		    else if (number/1000 == 0)
-		    Console.WriteLine("The number has three digit");
-		        else if (number/10000 ==0)
-			Console.WriteLine("The number has four digit");
+	    //conditions according to the number of digits
+	    if((number != 0) && (number/10 == 0))
+	        Console.WriteLine("The number has one digit");
+	            else if (number/100 == 0)
+		        Console.WriteLine("The number has two digit");
+			    else if (number/1000 == 0)
+			        Console.WriteLine("The number has three digit");
+				    else if (number/10000 ==0)
+				        Console.WriteLine("The number has four digit");
 								    
-			Console.WriteLine("Introduce un numero:");
-			number = Convert.ToInt32(Console.ReadLine());
+								    
+				        Console.WriteLine("Insert a number: (to finish type end)");
+			                dato = Console.ReadLine();
+									number = Convert.ToInt32(dato);
 		}
 					    
 	}
